@@ -1,0 +1,20 @@
+{
+    "form": {
+        "title": "Create User",
+        "userName": "Username",
+        "email": "Email",
+        "pwd": "Password",
+        "cnfPass": "Confirm Password",
+        "dspName": "Display Name",
+        "name": "Name",
+        "nickName": "Nickname",
+        "web": "Website",
+        "bio": "Bio",
+        "jabber": "jabber",
+        "aol": "AOL IM",
+        "yahoo": "Yahoo IM",
+        "submit":"CREATE AND ACCESS",
+        "first":"First",
+        "last":"Last"
+    }
+}

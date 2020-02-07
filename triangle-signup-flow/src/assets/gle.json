@@ -1,0 +1,20 @@
+{
+    "form": {
+        "title": "Cruthaigh Úsáideoir",
+        "Ainm Úsáideora": "Username",
+        "email": "Ríomhphost",
+        "pwd": "Pasfhocal",
+        "cnfPass": "Deimhnigh Pasfhocal",
+        "dspName": "Ainm taispeána",
+        "name": "Ainm",
+        "nickName": "Leasainm",
+        "web": "Láithreán Gréasáin",
+        "bio": "biodata",
+        "jabber": "jabber",
+        "aol": "AOL IM",
+        "yahoo": "Yahoo IM",
+        "submit":"CREATE AGUS ROCHTAIN",
+        "first":"Ar dtús",
+        "last":"Ar deireadh"
+    }
+}
