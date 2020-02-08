@@ -1,0 +1,52 @@
+
+<mat-toolbar>
+    <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    <span>Contract Portal</span>
+    <span class="example-fill-remaining-space"></span>
+    <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
+    <button mat-button [matMenuTriggerFor]="menu">  <mat-icon>perm_identity</mat-icon>User Name</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>User Preferences</button>
+  <button mat-menu-item>Account Settings</button>
+  <button mat-menu-item>Log out</button>
+</mat-menu>
+  </mat-toolbar>
+
+    <mat-sidenav-container color="warn">
+        <mat-sidenav #sidenav mode="side" opened role="navigation">
+            <mat-nav-list>
+              <mat-list-item ><mat-icon>dashboard</mat-icon></mat-list-item>
+              <mat-list-item ><mat-icon>search</mat-icon></mat-list-item>
+              <mat-list-item ><mat-icon>perm_identity</mat-icon></mat-list-item>
+              <mat-list-item ><mat-icon>work</mat-icon></mat-list-item>
+              <mat-list-item ><mat-icon>calendar_today</mat-icon></mat-list-item>
+              <mat-list-item ><mat-icon>chat_bubble</mat-icon></mat-list-item>
+                <mat-list-item ><mat-icon>settings</mat-icon></mat-list-item>
+              </mat-nav-list>          
+          </mat-sidenav>
+
+        <mat-sidenav-content class="container">
+            <mat-grid-list [cols]="6" rowHeight="1:1">
+                <mat-grid-tile [colspan]="3" [rowspan]="1">
+                  <mat-card class="dashboard-card">
+                     something3
+                  </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="3" [rowspan]="1">
+                  <mat-card class="dashboard-card">
+                     something2
+                  </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="4" [rowspan]="2">
+                  <mat-card class="dashboard-card">
+                     something1
+                  </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <mat-card class="dashboard-card">
+                       something4
+                    </mat-card>
+                  </mat-grid-tile>
+              </mat-grid-list> 
+           </mat-sidenav-content>
+    </mat-sidenav-container>
