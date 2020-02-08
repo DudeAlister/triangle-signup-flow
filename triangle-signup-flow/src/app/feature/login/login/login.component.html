@@ -1,0 +1,19 @@
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        
+            <mat-form-field>
+                <mat-label>User Name*</mat-label>
+                <input autocomplete="off" matInput formControlName="userName">
+                    <mat-error *ngIf="getUserName.invalid">please enter user name</mat-error>
+            </mat-form-field><br>
+    
+    
+    
+            <mat-form-field>
+                <mat-label>Password*</mat-label>
+                <input autocomplete="off" matInput formControlName="password">
+                <mat-error *ngIf="getPassword.invalid">please enter password</mat-error>
+            </mat-form-field><br>
+            <button mat-button>Submit</button>
+    </form>
+</div>

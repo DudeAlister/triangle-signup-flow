@@ -1,0 +1,90 @@
+<div class="container">
+    <form [formGroup]="userDetailsForm">
+        <p class="mat-display-2">Create user</p>
+
+
+        <mat-form-field>
+            <mat-label>User Name*</mat-label>
+            <input autocomplete="off" matInput formControlName="userName">
+                <mat-error *ngIf="userName.invalid">please enter user name</mat-error>
+        </mat-form-field><br>
+
+
+
+        <mat-form-field>
+            <mat-label>Email*</mat-label>
+            <input autocomplete="off" matInput formControlName="email">
+            <mat-error *ngIf="email.errors && email.errors.required">please enter email id</mat-error>
+            <mat-error *ngIf="email.errors && email.errors.email">incorrect email id </mat-error>
+        </mat-form-field><br>
+
+
+
+
+<form formGroupName= "pass">
+        <mat-form-field>
+            <mat-label>password*</mat-label>
+            <input autocomplete="off" matInput type="password" formControlName="password">
+            <mat-error *ngIf="password.errors && password.errors.required">please enter password</mat-error>
+          
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Confirm password*</mat-label>
+            <input autocomplete="off" matInput type="password" formControlName="confirmPass"
+                [errorStateMatcher]="multiFieldsErrorMatcher">    
+            <mat-error>Passwords not matching.</mat-error>
+        </mat-form-field><br>
+    </form>
+        <mat-form-field>
+            <mat-label>Display Name*</mat-label>
+            <mat-error *ngIf="displayName.errors && displayName.errors.required">please enter display name</mat-error>  
+            <input autocomplete="off" matInput formControlName="displayName">
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input autocomplete="off" matInput formControlName="firstName">
+            <mat-error *ngIf="firstName.errors && firstName.errors.required">please enter your First name</mat-error>  
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input autocomplete="off" matInput formControlName="lastName">
+            <mat-error *ngIf="lastName.errors && lastName.errors.required">please enter your Last name</mat-error> 
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Nickname</mat-label>
+            <input autocomplete="off" matInput formControlName="nickName">
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>website</mat-label>
+            <input autocomplete="off" matInput formControlName="web">
+            <mat-error *ngIf="web.errors && web.errors.invalidUrl">
+                Invalid url</mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Bio</mat-label>
+            <input autocomplete="off" matInput formControlName="bio">
+            <mat-error *ngIf="bio.errors && bio.errors.maxLength">sorry maximum size is 50</mat-error> 
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Jabber</mat-label>
+            <input autocomplete="off" matInput formControlName="jabber">
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>AOL IM</mat-label>
+            <input autocomplete="off" matInput formControlName="aolIm">
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Yahoo IM</mat-label>
+            <input autocomplete="off" matInput formControlName="yahooIm">
+        </mat-form-field><br>
+        <button mat-button>Submit</button>
+    </form>
+</div>
