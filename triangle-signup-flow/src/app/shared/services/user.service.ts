@@ -14,7 +14,7 @@ export class UserService {
     constructor() {
         this.checkOrCreateUsersData();
     }
-
+//saves user details to local storage
     saveUser<T>(userModel: UserModel): Observable<UserModel> {
 
         let observable = Observable.create((observer: any) => {
@@ -54,7 +54,7 @@ export class UserService {
         return observable;
     }
 
-
+//userd in gaurds
     authUser(): UserModel {
         
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));

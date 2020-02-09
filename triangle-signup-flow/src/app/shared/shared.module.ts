@@ -48,13 +48,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
         deps: [HttpClient]
       }
     }),
+    //material modules
     MatButtonModule,
     MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
     MatToolbarModule,
     MatMenuModule,
-    MatListModule,
     MatCardModule,
     MatBadgeModule,
     MatSelectModule,
