@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateAccessComponent } from './create-access.component';
+import { SelectLanguageComponent } from './select-language.component';
 
-xdescribe('CreateAccessComponent', () => {
-  let component: CreateAccessComponent;
-  let fixture: ComponentFixture<CreateAccessComponent>;
+xdescribe('SelectLanguageComponent', () => {
+  let component: SelectLanguageComponent;
+  let fixture: ComponentFixture<SelectLanguageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateAccessComponent ]
+      declarations: [ SelectLanguageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateAccessComponent);
+    fixture = TestBed.createComponent(SelectLanguageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

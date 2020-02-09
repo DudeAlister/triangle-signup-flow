@@ -1,19 +1,32 @@
-<div class="container">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        
-            <mat-form-field>
-                <mat-label>User Name*</mat-label>
-                <input autocomplete="off" matInput formControlName="userName">
-                    <mat-error *ngIf="getUserName.invalid">please enter user name</mat-error>
-            </mat-form-field><br>
+
+<div>
+
+
+<mat-card>
+    <mat-card-title>Welcom Back</mat-card-title>
+<mat-card-content>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+
+  <!-- username -->
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Username" formControlName="userName">
+    </mat-form-field>
+  </p>
+<!-- password -->
+  <p>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" formControlName="password">
+    </mat-form-field>
+  </p>
+  <mat-label>Do you have an account?<a [routerLink]="['/sign-up']" style="cursor: pointer;">sign up</a></mat-label>
+  <div class="button">
+    <button type="submit" mat-button>Login</button>
     
-    
-    
-            <mat-form-field>
-                <mat-label>Password*</mat-label>
-                <input autocomplete="off" matInput formControlName="password">
-                <mat-error *ngIf="getPassword.invalid">please enter password</mat-error>
-            </mat-form-field><br>
-            <button mat-button>Submit</button>
-    </form>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>
 </div>

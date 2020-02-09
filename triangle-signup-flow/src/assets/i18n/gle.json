@@ -15,7 +15,8 @@
         "yahoo": "Yahoo IM",
         "submit":"CREATE AGUS ROCHTAIN",
         "first":"Ar dtús Ainm",
-        "last":"Ar deireadh Ainm"
+        "last":"Ar deireadh Ainm",
+        "id_1":"scrúdú"
     },
     "dashboard": {
         "logOut":"Logáil Amach",

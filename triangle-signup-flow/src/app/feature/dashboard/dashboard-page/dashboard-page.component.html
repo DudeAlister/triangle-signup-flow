@@ -1,17 +1,4 @@
 
-<mat-toolbar>
-    <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-    <span>Contract Portal</span>
-    <span class="example-fill-remaining-space"></span>
-    <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
-    <button mat-button [matMenuTriggerFor]="menu">  <mat-icon>perm_identity</mat-icon>{{'form.userName'| translate}}</button>
-<mat-menu #menu="matMenu">
-  
-  <a mat-menu-item>{{'dashboard.userPref'|translate}}</a>
-  <a   mat-menu-item>{{'dashboard.accountSettings'|translate}}</a>
-  <a mat-menu-item [routerLink]="['/login']" >{{'dashboard.logOut'| translate}}</a>
-</mat-menu>
-  </mat-toolbar>
 
     <mat-sidenav-container color="warn">
      
@@ -30,6 +17,6 @@
         <mat-sidenav-content class="container">
           <app-select-language></app-select-language>
           <router-outlet></router-outlet>
-          <!-- <app-tile-view></app-tile-view> -->
+
         </mat-sidenav-content>
     </mat-sidenav-container>

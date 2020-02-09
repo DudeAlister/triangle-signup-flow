@@ -1,0 +1,27 @@
+<ng-template #dashboardHeader>
+    <mat-toolbar>
+    <mat-icon (click)="toggle()" style="cursor: pointer;">menu</mat-icon>
+    <span>Contract Portal</span>
+    <span class="example-fill-remaining-space"></span>
+    <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
+    <button mat-button [matMenuTriggerFor]="menu">  <mat-icon>perm_identity</mat-icon>{{'form.userName'| translate}}</button>
+<mat-menu #menu="matMenu">
+  <a mat-menu-item>{{'dashboard.userPref'|translate}}</a>
+  <a mat-menu-item>{{'dashboard.accountSettings'|translate}}</a>
+  <a mat-menu-item (click)="navigateToLogin()" >{{'dashboard.logOut'| translate}}</a>
+</mat-menu>
+  </mat-toolbar>
+</ng-template>
+
+<ng-template #loginHeader>
+    <mat-toolbar>
+    
+    <span>Contract Portal</span>
+    <span class="example-fill-remaining-space"></span>
+    Terms and policy
+   
+
+  </mat-toolbar>
+</ng-template>
+
+<ng-container *ngTemplateOutlet='selectedTemplate'></ng-container>

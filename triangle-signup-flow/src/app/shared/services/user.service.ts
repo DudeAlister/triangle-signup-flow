@@ -10,6 +10,7 @@ export class UserService {
 
     
    public languagePrefSubject = new BehaviorSubject<LanguageModel>(new LanguageModel());
+   public toggleSubject = new Subject<any>();
     constructor() {
         this.checkOrCreateUsersData();
     }
@@ -19,7 +20,7 @@ export class UserService {
         let observable = Observable.create((observer: any) => {
             try {
                 if (this.checkEmailIdExists(userModel.email)) {
-                    observer.error('Email Id Exists');
+                    observer.next('Email Id Exists');
                 } else {
                     this.createUser(userModel);
                     observer.next(200)
@@ -89,7 +90,7 @@ export class UserService {
 
     }
     private checkOrCreateUsersData(): void {
-        const exists = Array.isArray(localStorage.getItem('usersData'));
+        const exists = JSON.parse(localStorage.getItem('usersData'));
         if (!Array.isArray(exists)) {
             localStorage.setItem('usersData', '[]');
         }
