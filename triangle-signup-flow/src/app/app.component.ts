@@ -1,4 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
+import {Title} from "@angular/platform-browser";
 import { Router, NavigationStart } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Subscription} from 'rxjs';
@@ -12,11 +13,12 @@ import { Subscription} from 'rxjs';
 })
 export class AppComponent implements OnDestroy {
 
-  title = 'triangle-signup-flow';
+  
   isDashboard =false;
   subscription:Subscription = new Subscription();
 
-  constructor(private router: Router) {
+  constructor(private router: Router,private title:Title) {
+    this.title.setTitle('Contract portal')
    let sub = this.
       router.events.pipe(filter(event => event instanceof NavigationStart))
       .subscribe(x => {
