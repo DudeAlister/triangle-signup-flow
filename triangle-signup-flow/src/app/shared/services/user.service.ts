@@ -3,6 +3,11 @@ import { UserModel } from '../models/user.model';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { LoginModel } from '../models/login.model';
 import { LanguageModel } from '../models/language-pref.model';
+
+
+
+
+//single ton service
 @Injectable({
     providedIn: 'root',
   })
