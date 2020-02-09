@@ -9,6 +9,7 @@ import { LoginModule} from './feature/login/login.module';
 import { DashboardModule} from './feature/dashboard/dashboard.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 @NgModule({
   declarations: [
     AppComponent

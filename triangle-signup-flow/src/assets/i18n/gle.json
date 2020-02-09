@@ -1,7 +1,7 @@
 {
     "form": {
         "title": "Cruthaigh Úsáideoir",
-        "Ainm Úsáideora": "Username",
+        "userName":"Ainm Úsáideora",
         "email": "Ríomhphost",
         "pwd": "Pasfhocal",
         "cnfPass": "Deimhnigh Pasfhocal",
@@ -14,7 +14,13 @@
         "aol": "AOL IM",
         "yahoo": "Yahoo IM",
         "submit":"CREATE AGUS ROCHTAIN",
-        "first":"Ar dtús",
-        "last":"Ar deireadh"
+        "first":"Ar dtús Ainm",
+        "last":"Ar deireadh Ainm"
+    },
+    "dashboard": {
+        "logOut":"Logáil Amach",
+        "userPref":"Roghanna Úsáideora",
+        "accountSettings":"Socruithe cuntas"
+
     }
 }
