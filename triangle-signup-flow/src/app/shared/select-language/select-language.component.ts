@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/uesr.service';
+import { UserService } from '../services/user.service';
 import { LanguageModel } from '../models/language-pref.model';
 
 @Component({

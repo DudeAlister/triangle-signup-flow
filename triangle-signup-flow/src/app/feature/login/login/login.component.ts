@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { LoginModel } from 'src/app/shared/models/login.model';
-import { UserService } from 'src/app/shared/services/uesr.service';
+import { UserService } from 'src/app/shared/services/user.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 
