@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { urlValidator, nameValidator, passwordValidator, MultiFieldsErrorMatcher } from 'src/app/shared/directives/validators.directive';
+import { urlValidator, nameValidator, passwordValidator, MultiFieldsErrorMatcher } from 'src/app/shared/validators/validators.directive';
 import { UserModel } from 'src/app/shared/models/user.model';
-import { UserService } from 'src/app/shared/services/uesr.service';
+import { UserService } from 'src/app/shared/services/user.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/shared/services/uesr.service';
+import { UserService } from 'src/app/shared/services/user.service';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
