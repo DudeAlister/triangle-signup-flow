@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TileViewComponent } from './tile-view.component';
 
-describe('TileViewComponent', () => {
+xdescribe('TileViewComponent', () => {
   let component: TileViewComponent;
   let fixture: ComponentFixture<TileViewComponent>;
 

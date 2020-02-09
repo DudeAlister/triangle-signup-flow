@@ -23,8 +23,11 @@ import {
   MatSelectModule
 
 } from '@angular/material';
-import { SelectLanguageComponent } from './select-language/select-language.component';
+import { SelectLanguageComponent } from './components/select-language/select-language.component';
 import { TileViewComponent } from './components/tile-view/tile-view.component';
+import { HeaderComponent } from './header/header.component';
+import { SharedRoutingModule } from './shared-routing.module';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 
@@ -32,9 +35,10 @@ import { TileViewComponent } from './components/tile-view/tile-view.component';
 
 
 @NgModule({
-  declarations: [SelectLanguageComponent, TileViewComponent],
+  declarations: [SelectLanguageComponent, TileViewComponent, HeaderComponent, PageNotFoundComponent],
   imports: [
     CommonModule,
+    SharedRoutingModule,
     //ngx translate 
     HttpClientModule,
     TranslateModule.forRoot({
@@ -77,7 +81,8 @@ import { TileViewComponent } from './components/tile-view/tile-view.component';
     MatBadgeModule,
     MatSnackBarModule,
     TileViewComponent,
-    SelectLanguageComponent
+    SelectLanguageComponent,
+    HeaderComponent
   ],
   providers:[]
 })

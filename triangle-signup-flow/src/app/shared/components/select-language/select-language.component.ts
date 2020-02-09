@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
-import { LanguageModel } from '../models/language-pref.model';
+import { UserService } from '../../services/user.service';
+import { LanguageModel } from '../../models/language-pref.model';
 
 @Component({
   selector: 'app-select-language',

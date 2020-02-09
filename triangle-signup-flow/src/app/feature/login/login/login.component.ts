@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { Subscription} from "rxjs";
 import { LoginModel } from 'src/app/shared/models/login.model';
 import { UserService } from 'src/app/shared/services/user.service';
 import { Router } from '@angular/router';
@@ -11,13 +12,15 @@ import { MatSnackBar } from '@angular/material';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit ,OnDestroy{
+
   loginForm: FormGroup;
   loginModel:LoginModel = new LoginModel();
-
+  subscription:Subscription = new Subscription();
   constructor(private fb: FormBuilder,private userService:UserService,private route:Router,private snackBar:MatSnackBar) { 
     this.initForm();
   }
+  //initializing form
   initForm() {
     this.loginForm = this.fb.group({
       userName: new FormControl('', [Validators.required]),
@@ -26,19 +29,22 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+
     localStorage.setItem('currentUser','null');
   }
 
-onSubmit(){
+//saving user
+  onSubmit(){
   if(this.loginForm.valid){
     this.loginModel.setPassword = this.getPassword.value;
     this.loginModel.setUserNameEmail= this.getUserName.value;
-    this.userService.loginUser(this.loginModel)
+   this.subscription.add( this.userService.loginUser(this.loginModel)
     .subscribe((x:any) => this.navigateToDashboard(x),
     (error:any) => console.log(error),
-    () => console.log(''));
+    () => console.log('')));
   }
 }
+
 navigateToDashboard(res:string){
   if(res!==null){
     this.route.navigateByUrl('/dashboard');
@@ -54,5 +60,7 @@ navigateToDashboard(res:string){
   get getPassword():AbstractControl{
     return this.loginForm.get('password');
   }
-
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subscription} from 'rxjs'
+
 import { urlValidator, nameValidator, passwordValidator, MultiFieldsErrorMatcher } from 'src/app/shared/validators/validators.directive';
 import { UserModel } from 'src/app/shared/models/user.model';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -14,12 +16,13 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './create-access.component.html',
   styleUrls: ['./create-access.component.css']
 })
-export class CreateAccessComponent implements OnInit {
+export class CreateAccessComponent implements OnInit,OnDestroy {
+  
 
   userDetailsForm: FormGroup;
   userModel = new UserModel();
   multiFieldsErrorMatcher: MultiFieldsErrorMatcher = new MultiFieldsErrorMatcher();
-
+  subscription:Subscription = new Subscription();
 
   constructor(private fb: FormBuilder,private userService:UserService,private route:Router,private snackBar:MatSnackBar,private translate:TranslateService) { }
 
@@ -28,7 +31,7 @@ export class CreateAccessComponent implements OnInit {
       userName: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       pass: new FormGroup({
-        password: new FormControl('', [Validators.required]),
+        password: new FormControl('', [Validators.required,Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$')]),
         confirmPass: new FormControl('',[])
       }, { validators: [passwordValidator] })
       ,
@@ -49,7 +52,7 @@ export class CreateAccessComponent implements OnInit {
 
   ngOnInit() {
     this.userDetailsForm = this.initializeForm();
-    this.userService.languagePrefSubject.subscribe(x=> this.translate.setDefaultLang(x.selectedLanguage));
+    this.subscription.add(this.userService.languagePrefSubject.subscribe(x=> this.translate.setDefaultLang(x.selectedLanguage)));
 
   }
   onSubmit(){
@@ -76,7 +79,7 @@ export class CreateAccessComponent implements OnInit {
     if(res===200){
       this.route.navigateByUrl('/dashboard')
     } else {
-      this.snackBar.open('Message archived', 'Undo', {
+      this.snackBar.open('Email id exists', 'Error', {
         duration: 3000
       });
     }
@@ -125,5 +128,7 @@ export class CreateAccessComponent implements OnInit {
   }
 
 
-
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+      }
 }

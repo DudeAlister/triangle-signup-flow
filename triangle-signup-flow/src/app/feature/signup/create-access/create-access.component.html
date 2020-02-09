@@ -1,6 +1,8 @@
-<div class="container">
-    <app-select-language></app-select-language>
+<mat-card>
+    <mat-card-content>
+    
     <form [formGroup]="userDetailsForm"  (ngSubmit)="onSubmit()">
+        <app-select-language></app-select-language>
         <p class="mat-display-2">{{'form.title'|translate}}</p>
 
 
@@ -27,12 +29,19 @@
             <mat-label>{{'form.pwd'|translate}}*</mat-label>
             <input autocomplete="off" matInput type="password" formControlName="password">
             <mat-error *ngIf="password.errors && password.errors.required">please enter password</mat-error>
+            <mat-error *ngIf="password.errors && password.errors.pattern">This minimum length of the password must be 6 and requires one letter ,one special character,one number .</mat-error>
+            <mat-hint>
+                This minimum length of the password must be 6 and requires one letter ,one special character,one number .
+              </mat-hint>
           
         </mat-form-field><br>
 
         <mat-form-field>
             <mat-label>{{'form.cnfPass'|translate}}*</mat-label>
             <input autocomplete="off" matInput type="password"   [errorStateMatcher]="multiFieldsErrorMatcher" formControlName="confirmPass"> 
+            <mat-hint>
+                This minimum length of the password must be 6 and requires one letter ,one special character,one number .
+              </mat-hint>
             <mat-error *ngIf= "confirmPass.errors && confirmPass.errors.required">Please confirm password</mat-error>   
             <mat-error>Passwords not matching.</mat-error>
         </mat-form-field><br>
@@ -46,12 +55,22 @@
         <mat-form-field>
             <mat-label>{{'form.first'|translate}}</mat-label>
             <input autocomplete="off" matInput formControlName="firstName">
-            <mat-error *ngIf="firstName.errors && firstName.errors.required">please enter your First name</mat-error>  
+            <mat-error *ngIf="firstName.errors && firstName.errors.required">please enter your First name</mat-error> 
+            <mat-hint>
+                Should be  alphabets.
+              </mat-hint> 
+              <mat-error *ngIf="lastName.errors && lastName.errors.invalidName">should be alphabets</mat-error> 
+
         </mat-form-field>
         <mat-form-field>
             <mat-label>{{'form.last'|translate}}</mat-label>
             <input autocomplete="off" matInput formControlName="lastName">
+            <mat-hint>
+                Should be  alphabets.
+              </mat-hint>
             <mat-error *ngIf="lastName.errors && lastName.errors.required">please enter your Last name</mat-error> 
+            <mat-error *ngIf="lastName.errors && lastName.errors.invalidName">should be alphabets</mat-error> 
+
         </mat-form-field><br>
 
         <mat-form-field>
@@ -86,6 +105,7 @@
             <mat-label>Yahoo IM</mat-label>
             <input autocomplete="off" matInput formControlName="yahooIm">
         </mat-form-field><br>
-        <button mat-button>Submit</button>
+        <button mat-button><mat-icon>send</mat-icon>Create and Access</button>
     </form>
-</div>
+    </mat-card-content>
+</mat-card>

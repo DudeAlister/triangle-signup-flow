@@ -5,7 +5,7 @@ import { UserService } from '../services/user.service';
 @Injectable({
     providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
+export class DashBoardAuthGuard implements CanActivate {
     constructor(private userService: UserService, private router: Router) {
 
     }
@@ -13,6 +13,7 @@ export class AuthGuard implements CanActivate {
         next: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean {
        if(this.userService.authUser()){
+        
          return true;
        } else {
            this.router.navigateByUrl('/login');
