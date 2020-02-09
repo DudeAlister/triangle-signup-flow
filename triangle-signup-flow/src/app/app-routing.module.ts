@@ -4,7 +4,7 @@ import { DashBoardAuthGuard } from './shared/auth/dash-auth.gaurd';
 import { LoginAuthGuard } from './shared/auth/login-auth.gaurd';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
- 
+ //laszy loading
 
 const routes: Routes = [{
   path: 'login',
