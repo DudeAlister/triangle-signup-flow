@@ -18,18 +18,21 @@ import {
   MatListModule,
   MatGridListModule,
   MatCardModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatSnackBarModule,
+  MatSelectModule
 
 } from '@angular/material';
+import { SelectLanguageComponent } from './select-language/select-language.component';
+import { TileViewComponent } from './components/tile-view/tile-view.component';
 
-//services 
-import { UserService} from './services/uesr.service';
+
 
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [SelectLanguageComponent, TileViewComponent],
   imports: [
     CommonModule,
     //ngx translate 
@@ -49,7 +52,9 @@ import { UserService} from './services/uesr.service';
     MatMenuModule,
     MatListModule,
     MatCardModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSelectModule,
+    MatGridListModule,
     
     
 
@@ -69,10 +74,12 @@ import { UserService} from './services/uesr.service';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatBadgeModule
-    
+    MatBadgeModule,
+    MatSnackBarModule,
+    TileViewComponent,
+    SelectLanguageComponent
   ],
-  providers:[UserService]
+  providers:[]
 })
 export class SharedModule { }
 export function HttpLoaderFactory(http: HttpClient) {

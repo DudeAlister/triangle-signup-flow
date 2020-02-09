@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/shared/services/uesr.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserService,private translate:TranslateService) {
+
+   }
 
   ngOnInit() {
+    this.userService.languagePrefSubject.subscribe(x=>this.translate.setDefaultLang(x.selectedLanguage || 'en'));
   }
 
 }

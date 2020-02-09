@@ -14,7 +14,13 @@
         "aol": "AOL IM",
         "yahoo": "Yahoo IM",
         "submit":"CREATE AND ACCESS",
-        "first":"First",
-        "last":"Last"
+        "first":"First Name",
+        "last":"Last Name"
+    },
+    "dashboard": {
+        "logOut":"Log Out",
+        "userPref":"User Preferences",
+        "accountSettings":"Account Settings"
+
     }
 }

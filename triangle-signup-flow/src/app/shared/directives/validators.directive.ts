@@ -33,7 +33,12 @@ export function passwordValidator(form: FormGroup): { [key: string]: any } | nul
 
 export class MultiFieldsErrorMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    console.log(control.dirty , form.control.get('pass').invalid);
-    return control.dirty && form.control.get('pass').invalid;
+    
+   
+     
+    if(form.submitted && control.value===""){
+      return true;
+    }
+    return  (control.touched || control.dirty) &&  control.parent.invalid;
   }
 }
